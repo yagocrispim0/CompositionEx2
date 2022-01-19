@@ -13,10 +13,11 @@ namespace CompositionEx2.Entities
         public string Content { get; set; }
         public int Likes { get; set; }
 
+        public List<Comment> Comments { get; set; } = new List<Comment>();
+
 
         public Post()
         {
-
         }
 
         public Post(DateTime moment, string title, string content, int likes)
@@ -25,6 +26,16 @@ namespace CompositionEx2.Entities
             Title = title;
             Content = content;
             Likes = likes;
+        }
+
+        public void AddComment(Comment comment)
+        {
+            Comments.Add(comment);
+        }
+
+        public void RemoveComment(Comment comment)
+        {
+            Comments.Remove(comment);
         }
     }
 }
