@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CompositionEx2.Entities
 {
@@ -36,6 +34,22 @@ namespace CompositionEx2.Entities
         public void RemoveComment(Comment comment)
         {
             Comments.Remove(comment);
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(Title);
+            sb.AppendLine(Likes + "Likes - " + Moment.ToString("dd/MM/yyyy HH:mm:ss"));
+            sb.AppendLine(Content);
+            sb.AppendLine("Comments:");
+            foreach (Comment comment in Comments)
+            {
+                sb.AppendLine(comment.Text);
+            }
+
+            return sb.ToString();
+
         }
     }
 }

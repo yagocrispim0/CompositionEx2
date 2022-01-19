@@ -8,7 +8,7 @@ namespace CompositionEx2.Entities
 {
     internal class Comment
     {
-        public string text { get; set; }
+        public string Text { get; set; }
 
         public Comment()
         {
@@ -16,7 +16,7 @@ namespace CompositionEx2.Entities
         }
         public Comment(string text)
         {
-            this.text = text;
+            this.Text = text;
         }
     }
 }
